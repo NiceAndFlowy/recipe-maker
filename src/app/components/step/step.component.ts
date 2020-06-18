@@ -10,6 +10,10 @@ export class StepComponent implements OnInit {
   @Input() step: Step;
   constructor() { }
 
+  mediaLinkIsImage(): boolean {
+    return (this.step.media.match(/\.(jpeg|jpg|gif|png)/) != null);
+  }
+
   ngOnInit(): void {
   }
 
