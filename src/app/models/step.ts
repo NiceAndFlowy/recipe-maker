@@ -1,5 +1,3 @@
-export interface Step {
-  title: string;
-  text: string;
-  link: string;
+export class Step {
+  constructor(public title: string, public description: string, public media: string) { }
 }
