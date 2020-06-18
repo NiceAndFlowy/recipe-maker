@@ -1,0 +1,6 @@
+<p>make-recipe works!</p>
+<h1>{{recipe.title}}</h1>
+<app-step [step]="getCurrentStep()"></app-step>
+<div (click)="goToPrevStep()">Prev</div>
+<div (click)="goToNextStep()">Next</div>
+<div (click)="goBack()">View all recipes</div>
