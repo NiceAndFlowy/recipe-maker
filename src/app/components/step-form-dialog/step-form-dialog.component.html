@@ -3,8 +3,8 @@
   <form [formGroup]="form">
     <mat-form-field>
       <mat-label>Title</mat-label>
-      <input matInput formControlName="title">
-      <mat-error *ngIf="title.invalid && this.submitted">Please enter a title</mat-error>
+      <input matInput formControlName="title" cdkFocusInitial>
+      <mat-error *ngIf="title.invalid && this.submitted">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Description</mat-label>
@@ -13,6 +13,7 @@
     <mat-form-field>
       <mat-label>Image/Video link</mat-label>
       <input matInput formControlName="media">
+      <mat-error *ngIf="media.invalid && this.submitted">Please enter a valid url</mat-error>
     </mat-form-field>
   </form>
 </div>
