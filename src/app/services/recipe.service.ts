@@ -33,6 +33,11 @@ export class RecipeService {
     return this.recipes;
   }
 
+  getRecipeById(id: number): Recipe {
+    const foundRecipe = this.recipes.find(recipe => recipe.id == id);
+    return foundRecipe;
+  }
+
   private saveStateToStorage(): void {
     this.saveRecipesToStorage();
     this.saveIdToStorage();
