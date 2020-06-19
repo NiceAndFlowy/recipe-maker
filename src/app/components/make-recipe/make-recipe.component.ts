@@ -25,12 +25,20 @@ export class MakeRecipeComponent implements OnInit {
     return this.recipe.steps[this.currStep];
   }
 
+  isFirstStep(): boolean {
+    return this.currStep === 0;
+  }
+
+  isLastStep(): boolean {
+    return this.currStep === this.recipe.steps.length-1;
+  }
+
   goToNextStep(): void {
-    this.currStep = this.currStep < this.recipe.steps.length - 1 ? this.currStep + 1 : this.currStep;
+    this.currStep = this.isLastStep() ? this.currStep : this.currStep+1;
   }
 
   goToPrevStep(): void {
-    this.currStep = this.currStep > 0 ? this.currStep - 1 : this.currStep;
+    this.currStep = this.isFirstStep() ? this.currStep : this.currStep-1;
   }
 
   goBack(): void {
