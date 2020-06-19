@@ -1,10 +1,18 @@
-<h1>Main Page</h1>
-<div *ngFor="let r of this.Recipes">
-  <app-recipe [recipe]="r"></app-recipe>
-  <li><a routerLink="/recipe/{{r.id}}">Make</a></li>
-</div>
-<div class="">
-  <a mat-fab color="accent" routerLink="/recipe/add">
-    <mat-icon>add</mat-icon>
-  </a>
+<div class="container">
+  <h1>All Recipes</h1>
+  <mat-grid-list [cols]="numGridCols" rowHeight="1:1" gutterSize="2em">
+    <mat-grid-tile *ngFor="let r of Recipes">
+      <mat-card class="recipe-card" routerLink="/recipe/{{r.id}}">
+        <mat-card-header>
+          <mat-card-title>{{r.title}}</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="add-button">
+    <a mat-fab color="accent" routerLink="/recipe/add" class="">
+      <mat-icon>add</mat-icon>
+    </a>
+  </div>
+
 </div>
