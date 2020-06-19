@@ -10,10 +10,12 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class MainComponent implements OnInit {
   numGridCols: number = 3;
+
   constructor(private recipeService: RecipeService, private breakpointObserver: BreakpointObserver) {
     const isAtLeastMedium: string = '(min-width: 1024px)';
+
+    /** Update number of grid columns based on media size */
     breakpointObserver.observe([Breakpoints.Small, Breakpoints.XSmall, Breakpoints.Medium, isAtLeastMedium]).subscribe(result => {
-      console.log("Breakpoints", result, this.numGridCols);
       if (result.breakpoints[Breakpoints.XSmall]) {
         this.numGridCols = 1;
       }
@@ -27,7 +29,6 @@ export class MainComponent implements OnInit {
   }
 
   get Recipes(): Recipe[] {
-    console.log("Main_Recipes():", this.recipeService.Recipes);
     return this.recipeService.Recipes;
   }
 

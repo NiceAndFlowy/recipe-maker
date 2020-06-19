@@ -27,7 +27,6 @@ export class StepFormDialogComponent implements OnInit {
       description: '',
       media: ['', [Validators.pattern(URL_REGEXP)]]
     })
-    console.log(this.form, this.form.valid)
   }
 
   onSubmit(): void {
@@ -47,7 +46,6 @@ export class StepFormDialogComponent implements OnInit {
   }
 
   getErrorMessage() {
-    console.log(this.form.get('title').invalid)
     return this.form.get('title').invalid ? 'Please enter a title' : '';
   }
 }

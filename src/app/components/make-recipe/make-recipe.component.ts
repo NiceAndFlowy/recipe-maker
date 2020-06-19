@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Location } from '@angular/common';
 import { Step } from 'src/app/models/step';
-import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-make-recipe',
@@ -20,8 +19,6 @@ export class MakeRecipeComponent implements OnInit {
   }
 
   getCurrentStep(): Step {
-    console.log("getCurrentRecipe", this.recipe);
-    console.log("getCurrentStep", this.recipe.steps[0], this.currStep);
     return this.recipe.steps[this.currStep];
   }
 
@@ -48,10 +45,7 @@ export class MakeRecipeComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     const foundRecipe = this.recipeService.getRecipeById(id);
-    console.log('make-recipe_foundRecipe:', foundRecipe);
-    console.log('make-recipe_id:', id)
     this.recipe = foundRecipe != null ? foundRecipe : this.recipe;
-    console.log('make-recipe_recipe', this.recipe)
   }
 
 }

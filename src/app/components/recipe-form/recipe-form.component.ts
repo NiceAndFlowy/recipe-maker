@@ -35,7 +35,6 @@ export class RecipeFormComponent implements OnInit {
     });
 
     stepForm.afterClosed().subscribe(result => {
-      console.log("result after submit", result);
       if (result != null) {
         const newStep = new Step(result.title, result.description, result.media);
         this.steps = this.steps.concat([newStep]);
