@@ -26,6 +26,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
+    console.log("TEST", compiled.querySelector('.content span'))
     expect(compiled.querySelector('.content span').textContent).toContain('recipe-maker app is running!');
   });
 });

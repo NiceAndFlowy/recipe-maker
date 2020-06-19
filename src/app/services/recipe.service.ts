@@ -20,6 +20,10 @@ export class RecipeService {
     this.recipes = storedRecipes != null ? storedRecipes : [];
   }
 
+  get Id() {
+    return this.id;
+  }
+
   addRecipe(r: Recipe): void {
     r.id = this.id++;
     this.recipes.push(r);
