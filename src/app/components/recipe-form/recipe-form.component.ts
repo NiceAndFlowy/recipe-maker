@@ -4,6 +4,7 @@ import { StepFormDialogComponent } from '../step-form-dialog/step-form-dialog.co
 import { Step } from 'src/app/models/step';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-recipe-form',
@@ -15,13 +16,17 @@ export class RecipeFormComponent implements OnInit {
   form: FormGroup;
   submitted: boolean;
 
-  constructor(private formBuilder: FormBuilder, public dialog: MatDialog, private recipeService: RecipeService) {
+  constructor(private formBuilder: FormBuilder, public dialog: MatDialog, private recipeService: RecipeService, private location: Location) {
     this.steps = [];
     this.submitted = false;
   }
 
   get title() {
     return this.form.get('title');
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   openDialog(): void {

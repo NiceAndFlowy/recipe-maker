@@ -1,1 +1,8 @@
-<p>recipe works!</p>
+<div>
+  <h1>{{Recipe.title}}</h1>
+  <ol>
+    <li *ngFor="let s of Recipe.steps">
+      <app-step [step]="s"></app-step>
+    </li>
+  </ol>
+</div>

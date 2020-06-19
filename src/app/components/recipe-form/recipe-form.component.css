@@ -3,7 +3,6 @@
 }
 
 .container {
-  /* width: 70%; */
   display: flex;
   margin: 2em auto;
   justify-content: center;
@@ -16,22 +15,15 @@
     position: static !important;
   }
 }
-@media only screen and (min-width: 1024px) {
-  .form-container {
-    width: 708px;
-    /* flex: 1 1 70%; */
-  }
-}
+
 .form-container {
   width: 708px;
-  /* flex: 1 1 70%; */
 }
 
 .tools-container {
   min-width: 200px;
 }
 .tools {
-  /* flex: 1 1 30%; */
   position: fixed;
   margin-left: 1em;
 }

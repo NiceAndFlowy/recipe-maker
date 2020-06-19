@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="form-container">
     <form [formGroup]="form" class="recipe-form">
       <mat-form-field class="form-field_title">
@@ -10,15 +9,6 @@
     </form>
     <app-step *ngFor="let s of this.steps" [step]="s"></app-step>
     <mat-error *ngIf="this.steps.length === 0 && this.submitted">Recipes need at least one step</mat-error>
-    <!-- <div class="button-container">
-      <button (click)="openDialog()" mat-raised-button color="accent" class="button-add">
-        <span>
-          <mat-icon inline="true">add</mat-icon>
-          Add step
-        </span>
-      </button>
-    </div> -->
-
   </div>
   <div class="tools-container">
     <div class="tools">
@@ -29,9 +19,11 @@
             Add more steps
           </button>
         </mat-list-item>
-        <mat-list-item class="center"><span>
-            <button (click)="submitRecipe()" mat-flat-button color="primary">Submit Recipe</button>
-          </span>
+        <mat-list-item class="center">
+          <span><button (click)="submitRecipe()" mat-flat-button color="primary">Submit</button> </span>
+        </mat-list-item>
+        <mat-list-item class="center">
+          <span><button (click)="goBack()" mat-flat-button color="warn">Cancel</button> </span>
         </mat-list-item>
       </mat-list>
     </div>

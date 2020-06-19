@@ -1,5 +1,13 @@
 .card {
-  margin: 0 auto 2em auto;
+  margin: 0 5% 2em 5%;
+}
+
+img {
+  width: 100%
+}
+
+.description {
+  margin: 1em 1em !important;
 }
 
 

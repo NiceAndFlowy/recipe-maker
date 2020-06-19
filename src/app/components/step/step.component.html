@@ -2,9 +2,9 @@
   <mat-card-header>
     <mat-card-title>{{step.title}}</mat-card-title>
   </mat-card-header>
+  <img [src]="step.media" *ngIf="mediaLinkIsImage()">
   <mat-card-content>
-    <p>{{step.description}}</p>
-    <a>{{step.media}}</a>
-    <img [src]="step.media" *ngIf="mediaLinkIsImage()">
+    <p class="description">{{step.description}}</p>
+    <a *ngIf="!mediaLinkIsImage()">{{step.media}}</a>
   </mat-card-content>
 </mat-card>
